@@ -2,17 +2,51 @@
   "name": "stranger",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Erdinc Kaya",
+    "email": "erdinc.kaya@hpe.com",
+    "url": "https://www.hpe.com/"
+  },
+  "build": {
+    "appId": "com.hpe.stranger",
+    "productName": "Stranger",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
+    "cyclist": "^1.0.1",
+    "electron-is-dev": "^1.1.0",
+    "grommet": "^2.7.1",
+    "grommet-controls": "^1.1.19",
+    "grommet-icons": "^4.2.0",
+    "grommet-theme-hpe": "^0.4.2",
+    "polished": "^3.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "^3.0.1",
+    "styled-components": "^4.2.1"
   },
+  "main": "public/electron.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "build -mw"
   },
+  "homepage": "./",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -27,5 +61,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.10",
+    "@rescripts/rescript-env": "^0.0.10",
+    "concurrently": "^4.1.0",
+    "electron": "^5.0.2",
+    "electron-builder": "^20.43.0",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1",
+    "wait-on": "^3.2.0"
   }
 }

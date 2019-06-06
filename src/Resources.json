@@ -1,0 +1,177 @@
+{
+  "Applications": [
+    {
+      "Name": "File Server",
+      "Latency": "VeryHigh",
+      "Scale": "Large",
+      "Needs": [],
+      "Wants": [ "Dedupe", "Compression", "ScaleOut" ]
+    },
+    {
+      "Name": "Video Surveillence",
+      "Latency": "High",
+      "Scale": "Large",
+      "Needs": [],
+      "Wants": [ "ScaleOut" ]
+    },
+    {
+      "Name": "Archive",
+      "Latency": "VeryHigh",
+      "Scale": "VeryLarge",
+      "Needs": [],
+      "Wants": [ "ScaleOut" ]
+    },
+    {
+      "Name": "Hadoop",
+      "Latency": "High",
+      "Scale": "VeryLarge",
+      "Needs": [ "ScaleOut" ],
+      "Wants": []
+    },
+    {
+      "Name": "Cassandra",
+      "Latency": "Low",
+      "Scale": "Moderate",
+      "Needs": [ "ScaleOut", "AllFlash" ],
+      "Wants": []
+    },
+    {
+      "Name": "S3 Bucket",
+      "Latency": "High",
+      "Scale": "VeryLarge",
+      "Needs": [ "ScaleOut" ],
+      "Wants": []
+    },
+    {
+      "Name": "Object",
+      "Latency": "High",
+      "Scale": "VeryLarge",
+      "Needs": [ "ScaleOut" ],
+      "Wants": []
+    },
+    {
+      "Name": "Machine Learning",
+      "Latency": "VeryLow",
+      "Scale": "VeryLarge",
+      "Needs": [ "ScaleOut", "LowLatencyNetwork" ],
+      "Wants": []
+    },
+    {
+      "Name": "Data Stream",
+      "Latency": "Low",
+      "Scale": "Moderate",
+      "Needs": [],
+      "Wants": [ "ScaleOut" ]
+    },
+    {
+      "Name": "Backup",
+      "Latency": "VeryHigh",
+      "Scale": "VeryLarge",
+      "Needs": [],
+      "Wants": [ "ScaleOut" ]
+    }
+  ],
+  "Models": [
+    {
+      "VeryLow": "Very low",
+      "Low": "Low",
+      "Medium": "Medium",
+      "High": " High",
+      "VeryHigh": "Very high"
+    },
+    {
+      "Small": "Small",
+      "Moderate": "Moderate",
+      "Large": "Large",
+      "VeryLarge": "Very Large"
+    },
+    {
+      "Dedupe": "dedupe",
+      "Compression": "compression",
+      "ScaleOut": "scale-out",
+      "FlashCache": "flash-cache",
+      "AllFlash": "all-flash",
+      "HighSpeedNetwork": "network-40Gb",
+      "LowLatencyNetwork": "network-infiniband"
+    }
+  ],
+  "Portfolio": [
+    {
+      "Name": "nosql",
+      "Product": "Apollo 2000",
+      "MinCapacityTB": 0,
+      "MaxCapacityTB": 99,
+      "Latency": "VeryLow",
+      "Scale": "Small",
+      "Keywords": [ "streaming", "non-relational database" ],
+      "Features": [ "ScaleOut", "FlashCache", "LowLatencyNetwork" ],
+      "Apps": [ "Cassandra" ]
+    },
+    {
+      "Name": "epa",
+      "Product": "Elastic Platform for Analytics",
+      "MinCapacityTB": 200,
+      "MaxCapacityTB": 99999,
+      "Latency": "Medium",
+      "Scale": "Moderate",
+      "Keywords": [ "warm-to-cool", "batch data analytics", "hadoop ecosystem" ],
+      "Features": [ "ScaleOut", "FlashCache", "Compression" ],
+      "Apps": [ "Hadoop" ]
+    },
+    {
+      "Name": "scality",
+      "Product": "Scality RING with Apollo",
+      "MinCapacityTB": 200,
+      "MaxCapacityTB": 99999999,
+      "Latency": "High",
+      "Scale": "VeryLarge",
+      "Keywords": [ "S3", "object", "file", "multi-site", "geo-dispersed" ],
+      "Features": [ "ScaleOut" ],
+      "Apps": [ "S3Bucket", "Object", "Archive" ]
+    },
+    {
+      "Name": "qumulo",
+      "Product": "Qumulo File Fabric",
+      "MinCapacityTB": 200,
+      "MaxCapacityTB": 9999,
+      "Latency": "Medium",
+      "Scale": "VeryLarge",
+      "Keywords": [ "hot-to-warm", "NAS", "file", "analytics" ],
+      "Features": [ "FlashCache", "HighSpeedNetwork", "ScaleOut" ],
+      "Apps": [ "FileServer", "VideoSurveillence" ]
+    },
+    {
+      "Name": "wekaio",
+      "Product": "WekaIO",
+      "MinCapacityTB": 200,
+      "MaxCapacityTB": 99999,
+      "Latency": "VeryLow",
+      "Scale": "VeryLarge",
+      "Keywords": [ "hot-to-warm", "high performance", "AI" ],
+      "Features": [ "LowLatencyNetwork", "FlashCache", "ScaleOut", "HighSpeedNetwork" ],
+      "Apps": [ "MachineLearning" ]
+    },
+    {
+      "Name": "hedvig",
+      "Product": "Hedvig",
+      "MinCapacityTB": 0,
+      "MaxCapacityTB": 99999,
+      "Latency": "VeryLow",
+      "Scale": "VeryLarge",
+      "Keywords": [],
+      "Features": [ "ScaleOut" ],
+      "Apps": [ "FileServer" ]
+    },
+    {
+      "Name": "datera",
+      "Product": "Datera",
+      "MinCapacityTB": 0,
+      "MaxCapacityTB": 99999,
+      "Latency": "Low",
+      "Scale": "VeryLarge",
+      "Keywords": [],
+      "Features": [ "ScaleOut" ],
+      "Apps": []
+    }
+  ]
+}
