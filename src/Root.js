@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'grommet';
+import { Box, TextInput } from 'grommet';
 import { Workload } from './Workload';
 
 export class Root extends React.Component {
@@ -12,7 +12,7 @@ export class Root extends React.Component {
     render() {
         const Resources = require("./Resources.json");
       return (
-          <Box fill flex >
+          <Box fill flex>
             <h3>Workloads</h3>
             <Box flex>
                 {

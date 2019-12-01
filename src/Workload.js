@@ -12,7 +12,7 @@ export class Workload extends React.Component {
     render() {
       return (
         <Box 
-          direction="row-responsive"
+          direction="row"
           justify="center"
           align="center"
           pad="large"
@@ -29,9 +29,9 @@ export class Workload extends React.Component {
             <MaskedInput
               mask={[
                 {
-                regexp: /^3[0-9]$/,
+                regexp: /^[0-9]$/,
                 },
-                { fixed: 'TB' }
+                { placeholder: 'TB' }
               ]}
               value={this.state.capacity}
               min="0"
