@@ -1,0 +1,30 @@
+import React from 'react';
+import { Box, TextInput } from 'grommet';
+import { Workload } from './workload';
+
+export class Root extends React.Component {
+    // eslint-disable-next-line no-useless-constructor
+    constructor(props) {
+        super(props);
+        // this.handleClick = this.handleClick.bind(this);
+    }
+
+    render() {
+        const Resources = require("./resources.json");
+      return (
+          <Box fill flex>
+            <h3>Workloads</h3>
+            <Box flex>
+                {
+                    Resources.Applications.map(wl => 
+                        <Workload key={wl.Name} Workload={wl}>{wl.Name}</Workload>
+                    )
+                }
+            </Box>
+            <Box>
+                <h4>Here comes the recommendations</h4>
+            </Box>
+        </Box>
+      );
+    }
+  }
