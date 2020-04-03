@@ -1,55 +1,48 @@
 {
   "name": "stranger",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": "Erdinc Kaya",
+  "description": "HPE Platform Selector App",
+  "homepage": ".",
+  "main": "build/electron/main.js",
   "private": true,
-  "author": {
-    "name": "Erdinc Kaya",
-    "email": "erdinc.kaya@hpe.com",
-    "url": "https://www.hpe.com/"
+  "dependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@types/jest": "25.1.2",
+    "@types/node": "13.7.1",
+    "@types/react": "16.9.19",
+    "@types/react-dom": "16.9.5",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-is-dev": "^1.1.0",
+    "electron-reload": "^1.5.0",
+    "grommet": "^2.11.3",
+    "grommet-icons": "^4.4.0",
+    "grommet-theme-hpe": "^1.0.5",
+    "python-shell": "^1.0.8",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1",
+    "styled-components": "^5.0.1",
+    "typescript": "3.7.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "postinstall": "electron-builder install-app-deps",
+    "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && tsc -p electron -w\" \"wait-on http://localhost:3000 && tsc -p electron && electron .\"",
+    "windev": "concurrently \"SET BROWSER=none && yarn start\" \"wait-on http://localhost:3000 && tsc -p electron -w\" \"wait-on http://localhost:3000 && tsc -p electron && electron .\"",
+    "electron:build": "yarn build && tsc -p electron && electron-builder"
   },
   "build": {
-    "appId": "com.hpe.stranger",
-    "productName": "Stranger",
-    "copyright": "Copyright © 2019 ${author}",
-    "mac": {
-      "category": "public.app-category.utilities"
-    },
+    "extends": null,
     "files": [
-      "build/**/*",
-      "node_modules/**/*"
+      "build/**/*"
     ],
     "directories": {
       "buildResources": "assets"
     }
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "grommet": "^2.11.2",
-    "grommet-icons": "^4.4.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.0.1",
-    "cyclist": "^1.0.1",
-    "electron-is-dev": "^1.1.0",
-    "grommet-controls": "^2.0.1",
-    "grommet-theme-hpe": "^0.4.2",
-    "polished": "^3.4.2"
-  },
-  "main": "public/electron.js",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "postinstall": "electron-builder install-app-deps",
-    "preelectron-pack": "yarn build",
-    "electron-pack": "build -mw"
-  },
-  "homepage": "./",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -66,13 +59,9 @@
     ]
   },
   "devDependencies": {
-    "@rescripts/cli": "^0.0.13",
-    "@rescripts/rescript-env": "^0.0.11",
-    "concurrently": "^5.0.0",
-    "electron": "^7.1.2",
-    "electron-builder": "^21.2.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.2",
-    "wait-on": "^3.3.0"
+    "concurrently": "^5.1.0",
+    "electron": "^8.0.0",
+    "electron-builder": "^22.3.2",
+    "wait-on": "^4.0.0"
   }
 }
