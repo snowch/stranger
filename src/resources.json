@@ -1,74 +1,92 @@
 {
   "Applications": [
     {
+      "Name": "VM",
+      "Latency": "Low",
+      "Scale": "Moderate",
+      "Needs": ["AllFlash", "LowLatencyNetwork"],
+      "Wants": [ "Dedupe", "Compression" ],
+      "Icon": "img/Virtual Server.png"
+    },
+    {
       "Name": "File Server",
       "Latency": "VeryHigh",
       "Scale": "Large",
       "Needs": [],
-      "Wants": [ "Dedupe", "Compression", "ScaleOut" ]
+      "Wants": [ "Dedupe", "Compression", "ScaleOut" ],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Video Surveillence",
       "Latency": "High",
       "Scale": "Large",
       "Needs": [],
-      "Wants": [ "ScaleOut" ]
+      "Wants": [ "ScaleOut" ],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Archive",
       "Latency": "VeryHigh",
       "Scale": "VeryLarge",
       "Needs": [],
-      "Wants": [ "ScaleOut" ]
+      "Wants": [ "ScaleOut" ],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Hadoop",
       "Latency": "High",
       "Scale": "VeryLarge",
       "Needs": [ "ScaleOut" ],
-      "Wants": []
+      "Wants": [],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Cassandra",
       "Latency": "Low",
       "Scale": "Moderate",
       "Needs": [ "ScaleOut", "AllFlash" ],
-      "Wants": []
+      "Wants": [],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "S3 Bucket",
       "Latency": "High",
       "Scale": "VeryLarge",
       "Needs": [ "ScaleOut" ],
-      "Wants": []
+      "Wants": [],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Object",
       "Latency": "High",
       "Scale": "VeryLarge",
       "Needs": [ "ScaleOut" ],
-      "Wants": []
+      "Wants": [],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Machine Learning",
       "Latency": "VeryLow",
       "Scale": "VeryLarge",
       "Needs": [ "ScaleOut", "LowLatencyNetwork" ],
-      "Wants": []
+      "Wants": [],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Data Stream",
       "Latency": "Low",
       "Scale": "Moderate",
       "Needs": [],
-      "Wants": [ "ScaleOut" ]
+      "Wants": [ "ScaleOut" ],
+      "Icon": "img/Data.png"
     },
     {
       "Name": "Backup",
       "Latency": "VeryHigh",
       "Scale": "VeryLarge",
       "Needs": [],
-      "Wants": [ "ScaleOut" ]
+      "Wants": [ "ScaleOut" ],
+      "Icon": "img/Data.png"
     }
   ],
   "Models": [
@@ -150,17 +168,6 @@
       "Keywords": [ "hot-to-warm", "high performance", "AI" ],
       "Features": [ "LowLatencyNetwork", "FlashCache", "ScaleOut", "HighSpeedNetwork" ],
       "Apps": [ "MachineLearning" ]
-    },
-    {
-      "Name": "hedvig",
-      "Product": "Hedvig",
-      "MinCapacityTB": 0,
-      "MaxCapacityTB": 99999,
-      "Latency": "VeryLow",
-      "Scale": "VeryLarge",
-      "Keywords": [],
-      "Features": [ "ScaleOut" ],
-      "Apps": [ "FileServer" ]
     },
     {
       "Name": "datera",

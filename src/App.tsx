@@ -5,7 +5,7 @@ import Content from './Content'
 
 const App: React.FC = () => {
   return (
-    <Grommet full theme={hpe}>
+    <Grommet full theme={hpe} themeMode='dark'>
       <Box fill="vertical" align="stretch" justify="start" direction="column" >
         <Header align="center" direction="row" justify="between" fill="horizontal" border={{"side":"bottom","style":"solid","size":"small","color":"brand"}}
           background="brand">
@@ -21,11 +21,11 @@ const App: React.FC = () => {
         <Box align="stretch" justify="start" direction="column" pad="small" fill>
           <Content />
         </Box>
-        {/* <Footer align="center" direction="row" flex={false} justify="between" gap="medium" background="neutral-3" fill="horizontal">
+        <Footer align="center" direction="row" flex={false} justify="between" gap="medium" background="neutral-3" fill="horizontal">
           <Text>
-            Copyright: Erdinc Kaya@2020
+            Erdinc Kaya @ 2020
           </Text>
-        </Footer> */}
+        </Footer>
       </Box>
       </Grommet>
   );
