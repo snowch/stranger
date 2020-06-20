@@ -1,33 +1,24 @@
 import React from 'react';
-import { Grommet, Box, Header, Nav, Heading, Footer, Text } from 'grommet'
+import { Grommet, CheckBox } from 'grommet'
 import { hpe } from 'grommet-theme-hpe'
-import Content from './Content'
+import Projects from './Projects'
+
+enum themeType {
+  dark = 'dark',
+  light = 'light'
+}
 
 const App: React.FC = () => {
+  const [mode, setMode] = React.useState(themeType.dark)
+  const isDark = mode === themeType.dark
+  const themeSelector = 
+    <CheckBox 
+      checked={isDark} 
+      onChange={() => mode === themeType.dark ? setMode(themeType.light) : setMode(themeType.dark)} />
   return (
-    <Grommet full theme={hpe} themeMode='dark'>
-      <Box fill="vertical" align="stretch" justify="start" direction="column" >
-        <Header align="center" direction="row" justify="between" fill="horizontal" border={{"side":"bottom","style":"solid","size":"small","color":"brand"}}
-          background="brand">
-            <Nav align="center" flex={false} direction="row-responsive" justify="start" fill="horizontal">
-              <Heading level="3" margin="small">
-                Home
-              </Heading>
-              <Text>
-                Project
-              </Text>
-            </Nav>
-        </Header>
-        <Box align="stretch" justify="start" direction="column" pad="small" fill>
-          <Content />
-        </Box>
-        <Footer align="center" direction="row" flex={false} justify="between" gap="medium" background="neutral-3" fill="horizontal">
-          <Text>
-            Erdinc Kaya @ 2020
-          </Text>
-        </Footer>
-      </Box>
-      </Grommet>
+    <Grommet full theme={hpe} themeMode={mode}>
+      <Projects themeSelector={themeSelector} />
+    </Grommet>
   );
 }
 
